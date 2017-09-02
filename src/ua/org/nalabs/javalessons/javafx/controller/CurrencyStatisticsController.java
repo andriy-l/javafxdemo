@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -23,7 +20,7 @@ import java.util.*;
 
 public class CurrencyStatisticsController {
     @FXML
-    private LineChart<Number,Number> lineChart;
+    private LineChart<String,Number> lineChart;
 
     @FXML
     private Button refreshButton;
@@ -41,16 +38,16 @@ public class CurrencyStatisticsController {
     private ChoiceBox<String> choiceBox;
 
     @FXML
-    AnchorPane graphAnchoPane;
+    private AnchorPane graphAnchoPane;
 
-    Set<Currency> currencies;
+    private Set<Currency> currencies;
 
     @FXML
-    NumberAxis xAxis;
+    private CategoryAxis xAxis;
     @FXML
-    NumberAxis yAxis;
+    private NumberAxis yAxis;
 
-    XYChart.Series series;
+    private XYChart.Series series;
 
 
 
@@ -64,26 +61,17 @@ public class CurrencyStatisticsController {
      */
     @FXML
     private void initialize() {
-        System.out.println("init called");
-
         ObservableList<String> curr = FXCollections.observableList(CurrencyUtil.getAllCurrencies()) ;
         choiceBox.setItems(curr);
         choiceBox.getSelectionModel().select("USD");
-//        xAxis = new NumberAxis();
-//        yAxis = new NumberAxis();
-        xAxis.setLabel("Dates of investigation");
-        yAxis.setLabel("Currencies values of investigation");
-        lineChart = new LineChart<Number, Number>(xAxis, yAxis);
-        lineChart.setTitle("Currencies stats");
         refreshButton.setDefaultButton(true);
 
     }
 
     @FXML
     public void handleOnFromDate() {
-
             this.from = datePickerFrom.getValue();
-            System.out.println(this.from);
+        System.out.println(this.from);
     }
 
     @FXML
@@ -105,21 +93,18 @@ public class CurrencyStatisticsController {
             // check only for before
             // TODO add other checks
             series = new XYChart.Series();
-            series.setName("My Chart");
+            series.setName(choiceBox.getValue());
             long daysBetween = ChronoUnit.DAYS.between(datePickerFrom.getValue(), datePickerTo.getValue());
-            System.out.println(daysBetween);
+            System.out.println("days between " + daysBetween);
 
             LocalDate datePosition = this.from;
-            for (int i = 0; i < daysBetween; i++) {
+            while (datePosition.isBefore(this.to)) {
             series.getData().add(
-                    new XYChart.Data<Number, Number>(datePosition.getDayOfMonth(),
-                            CurrencyUtil.getCurrencyForDate(choiceBox.getValue(), datePosition)) );
-//                System.out.println(datePosition.getDayOfMonth() + "   " +
-//                        CurrencyUtil.getCurrencyForDate(choiceBox.getValue(), datePosition));
+                    new XYChart.Data<String, Number>(datePosition.toString(), CurrencyUtil.getCurrencyForDate(choiceBox.getValue(), datePosition) ));
                 datePosition = datePosition.plusDays(1);
             }
 
-            System.out.println(series.getData());
+
             lineChart.getData().add(series);
 
             graphAnchoPane.requestLayout();

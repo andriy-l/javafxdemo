@@ -103,7 +103,7 @@ public class CurrencyUtil {
 
     public static double getCurrencyForDate (String currencyName, LocalDate date) { // throws MalformedURLException, IOException {
         double gbpCurrency = 0;
-        int intMonth = date.getMonth().ordinal();
+        int intMonth = date.getMonth().ordinal() + 1;
         String strMonth = intMonth < 10 ? "0"+intMonth : intMonth+"";
         String strDate = date.getYear()+""+strMonth+""+date.getDayOfMonth();
         String url = "http://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="+currencyName+"&date="+strDate+"&json";
@@ -134,6 +134,7 @@ public class CurrencyUtil {
 
             if(scanner.hasNextLine()) {
                 List<NBUCurrency> currencyList = gson.fromJson(scanner.nextLine(), new TypeToken<List<NBUCurrency>>(){}.getType());
+                System.out.println(currencyList);
                 BigDecimal rate = currencyList.get(0).getRate();
                 gbpCurrency = rate.doubleValue();
             }

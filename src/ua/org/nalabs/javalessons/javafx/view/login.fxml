@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.nalabs.javalessons.javafx.Login">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.nalabs.javalessons.javafx.controller.LoginController">
    <children>
       <DialogPane layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="294.0" prefWidth="575.0">
           <header>
@@ -30,8 +30,8 @@
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" text="Login:" />
                         <Label contentDisplay="CENTER" text="Password:" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="1" />
-                        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="loginField" GridPane.columnIndex="1" />
+                        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -46,8 +46,8 @@
       </DialogPane>
       <ButtonBar layoutX="49.0" layoutY="346.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-            <Button defaultButton="true" mnemonicParsing="false" text="Login" />
-            <Button alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" text="Exit" textAlignment="CENTER" />
+            <Button fx:id="loginButton" defaultButton="true" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
+            <Button fx:id="cancelButton" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleCancel" text="Exit" textAlignment="CENTER" />
         </buttons>
       </ButtonBar>
    </children>

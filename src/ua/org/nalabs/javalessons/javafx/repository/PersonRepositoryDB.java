@@ -2,6 +2,7 @@ package ua.org.nalabs.javalessons.javafx.repository;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import ua.org.nalabs.javalessons.javafx.controller.DBBrowserController;
 import ua.org.nalabs.javalessons.javafx.model.Person;
 
 import java.io.FileInputStream;
@@ -139,6 +140,7 @@ public class PersonRepositoryDB implements PersonRepository {
 
             statement.execute("INSERT INTO persons(FIRSTNAME, SECONDNAME, STREET, POSTCODE, CITY, BIRTHDAY) " +
                     "VALUES(\'Lydia\', \'Kunz\', \'Ruska Street\', 46000, \'Ternopil\', '1978-03-21 14:00:00.0')");
+
 
     }catch (SQLException sqlexception) {
         LOGGER.log(Level.WARNING, sqlexception.getMessage(), sqlexception);

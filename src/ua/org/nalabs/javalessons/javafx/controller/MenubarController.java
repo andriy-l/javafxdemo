@@ -93,6 +93,8 @@ public class MenubarController {
         PersonRepositoryDB repository = new PersonRepositoryDB();
         repository.initDB();
         repository.fillDB();
+        main.getDbBrowserController().getPersonTableView().setItems(repository.getPersonObservableList());
+
     }
 
 

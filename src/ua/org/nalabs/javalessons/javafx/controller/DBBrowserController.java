@@ -40,6 +40,15 @@ import ua.org.nalabs.javalessons.javafx.util.DateUtil;
 public class DBBrowserController {
     @FXML
     private TableView<Person> personTable;
+
+    public TableView<Person> getPersonTableView() {
+        return this.personTable;
+    }
+
+    public void setPersonTable(TableView<Person> personTable) {
+        this.personTable = personTable;
+    }
+
     @FXML
     private TableColumn<Person, String> firstNameColumn;
     @FXML

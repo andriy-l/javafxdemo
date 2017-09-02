@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
@@ -13,6 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.chart.CategoryAxis?>
 <AnchorPane prefHeight="400.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.org.nalabs.javalessons.javafx.controller.CurrencyStatisticsController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutX="167.0" layoutY="120.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -47,12 +47,12 @@
                </children></AnchorPane>
           <AnchorPane fx:id="graphAnchoPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <LineChart fx:id="lineChart" layoutX="-42.0" layoutY="-1.0" prefHeight="398.0" prefWidth="532.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <LineChart fx:id="lineChart" layoutX="-42.0" layoutY="-1.0" prefHeight="398.0" prefWidth="532.0" title="Currencies stats" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
-                      <NumberAxis side="BOTTOM"  fx:id="xAxis"/>
+                      <CategoryAxis label="Dates of investigation"  side="BOTTOM" tickLabelGap="1.0" fx:id="xAxis" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" fx:id="yAxis" />
+                      <NumberAxis fx:id="yAxis" label="Currencies values of investigation" side="LEFT" />
                     </yAxis>
                   </LineChart>
                </children></AnchorPane>

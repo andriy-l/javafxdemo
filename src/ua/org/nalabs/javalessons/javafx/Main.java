@@ -2,6 +2,7 @@ package ua.org.nalabs.javalessons.javafx;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
@@ -20,19 +21,31 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.prefs.Preferences;
 
 /*
 
  */
 public class Main extends Application {
+    private Stage loginStage;
     private Stage stage;
     private BorderPane rootPane;
     private PersonRepositoryDB personRepositoryDB;
+    private Scene menuBarScene;
 
+    public DBBrowserController getDbBrowserController() {
+        return dbBrowserController;
+    }
+
+    public void setDbBrowserController(DBBrowserController dbBrowserController) {
+        this.dbBrowserController = dbBrowserController;
+    }
+
+    private DBBrowserController dbBrowserController;
 
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(args);
 
     }
 
@@ -51,27 +64,46 @@ public class Main extends Application {
         personOverview();
     }
 
-    private void initRootPane() {
-        try {
-            FXMLLoader root = new FXMLLoader();
-            root.setLocation(Main.class.getResource("view/menubar.fxml"));
-            rootPane = (BorderPane) root.load();
-            Scene scene = new Scene(rootPane);
-            stage.setScene(scene);
-            MenubarController menubarController = root.getController();
-            menubarController.setMain(this);
+    public void authenticationOK() {
+            stage.setScene(menuBarScene);
             stage.show();
+    }
 
+    private void initRootPane() {
+//
+
+
+        FXMLLoader loginLoader = new FXMLLoader();
+        FXMLLoader menuBarLoader = new FXMLLoader();
+        loginLoader.setLocation(Main.class.getResource("view/login.fxml"));
+        menuBarLoader.setLocation(Main.class.getResource("view/menubar.fxml"));
+        AnchorPane loginPane = null;
+        try {
+            loginPane = (AnchorPane) loginLoader.load();
+            rootPane = (BorderPane) menuBarLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        LoginController loginController = loginLoader.<LoginController>getController();
+        MenubarController menubarController = menuBarLoader.getController();
+        menubarController.setMain(this);
+        loginController.setMain(this);
+
+
+
+        Scene loginScene = new Scene(loginPane);
+        menuBarScene = new Scene(rootPane);
+        stage.setScene(loginScene);
+        loginController.handleLogin();
+        stage.show();
+
         // Try to load last opened person file.
         File file = getPersonFilePath();
         if (file != null) {
             loadPersonDataFromFile(file);
         }
-
     }
+
 
     private void personOverview(){
         try {
@@ -79,8 +111,8 @@ public class Main extends Application {
             fxmlLoader.setLocation(Main.class.getResource("view/dbbrowser.fxml"));
             AnchorPane personOverview = (AnchorPane) fxmlLoader.load();
             rootPane.setCenter(personOverview);
-            DBBrowserController controller = fxmlLoader.getController();
-            controller.setMain(this);
+            dbBrowserController = fxmlLoader.getController();
+            dbBrowserController.setMain(this);
 
         }catch (IOException ioe) {
             ioe.printStackTrace();
