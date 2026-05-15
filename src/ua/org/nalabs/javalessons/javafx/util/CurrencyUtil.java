@@ -51,7 +51,7 @@ public class CurrencyUtil {
 
     public static double getCurrencyNow (String currencyName) { // throws MalformedURLException, IOException {
         double gbpCurrency = 0;
-        String url = "http://bank.gov.ua/NBUStatService/v1/statdirectory/exchange";
+        String url = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange";
 //        https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json
 //        GregorianCalendar gc = new GregorianCalendar();
 
@@ -103,10 +103,8 @@ public class CurrencyUtil {
 
     public static double getCurrencyForDate (String currencyName, LocalDate date) { // throws MalformedURLException, IOException {
         double gbpCurrency = 0;
-        int intMonth = date.getMonth().ordinal() + 1;
-        String strMonth = intMonth < 10 ? "0"+intMonth : intMonth+"";
-        String strDate = date.getYear()+""+strMonth+""+date.getDayOfMonth();
-        String url = "http://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="+currencyName+"&date="+strDate+"&json";
+        String strDate = String.format("%d%02d%02d", date.getYear(), date.getMonthValue(), date.getDayOfMonth());
+        String url = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="+currencyName+"&date="+strDate+"&json";
 //        String url = "http://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="+currencyName+"&date=20160516&json";
 //        https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=EUR&date=YYYYMMDD
 //        https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json

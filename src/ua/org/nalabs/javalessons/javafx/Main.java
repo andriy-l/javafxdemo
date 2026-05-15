@@ -58,7 +58,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         this.stage = primaryStage;
         this.stage.setTitle("Persons");
-        this.stage.getIcons().add(new Image("file:resources/images/smile.png"));
+        java.io.InputStream iconStream = Main.class.getResourceAsStream("/images/smile.png");
+        if (iconStream != null) {
+            this.stage.getIcons().add(new Image(iconStream));
+        }
         personRepositoryDB = new PersonRepositoryDB();
         initRootPane();
         personOverview();

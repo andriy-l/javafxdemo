@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<personListWrapper>
+    <persons>
+        <birthday>1960-01-21 16:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Werner</firstName>
+        <lastName>Meyer</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 10:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Hans</firstName>
+        <lastName>Muster</lastName>
+        <postalCode>46018</postalCode>
+        <street>Baker St.</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 20:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Ruth</firstName>
+        <lastName>Mueller</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1970-01-21 11:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Cornelia</firstName>
+        <lastName>Meier</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1960-01-21 16:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Werner</firstName>
+        <lastName>Meyer</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1978-03-21 14:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Lydia</firstName>
+        <lastName>Kunz</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>2019-08-26 20:36:14.0</birthday>
+        <city>T</city>
+        <firstName>Василь</firstName>
+        <lastName>Васильців</lastName>
+        <postalCode>0</postalCode>
+        <street>Ruska st.</street>
+    </persons>
+    <persons>
+        <birthday>2026-05-13 23:41:37.0</birthday>
+        <city>T</city>
+        <firstName>Lut</firstName>
+        <lastName>Andriy</lastName>
+        <postalCode>0</postalCode>
+        <street>Ruska st.</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 10:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Hans</firstName>
+        <lastName>Muster</lastName>
+        <postalCode>46018</postalCode>
+        <street>Baker St.</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 20:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Ruth</firstName>
+        <lastName>Mueller</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1987-05-25 05:20:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Heinz</firstName>
+        <lastName>Kurz</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1970-01-21 11:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Cornelia</firstName>
+        <lastName>Meier</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1960-01-21 16:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Werner</firstName>
+        <lastName>Meyer</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1978-03-21 14:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Lydia</firstName>
+        <lastName>Kunz</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 10:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Hans</firstName>
+        <lastName>Muster</lastName>
+        <postalCode>46018</postalCode>
+        <street>Baker St.</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 20:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Ruth</firstName>
+        <lastName>Mueller</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1987-05-25 05:20:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Heinz</firstName>
+        <lastName>Kurz</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1970-01-21 11:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Cornelia</firstName>
+        <lastName>Meier</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1960-01-21 16:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Werner</firstName>
+        <lastName>Meyer</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1978-03-21 14:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Lydia</firstName>
+        <lastName>Kunz</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 10:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Hans</firstName>
+        <lastName>Muster</lastName>
+        <postalCode>46018</postalCode>
+        <street>Baker St.</street>
+    </persons>
+    <persons>
+        <birthday>1999-02-21 20:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Ruth</firstName>
+        <lastName>Mueller</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1987-05-25 05:20:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Heinz</firstName>
+        <lastName>Kurz</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1970-01-21 11:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Cornelia</firstName>
+        <lastName>Meier</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1960-01-21 16:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Werner</firstName>
+        <lastName>Meyer</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+    <persons>
+        <birthday>1978-03-21 14:00:00.0</birthday>
+        <city>Ternopil</city>
+        <firstName>Lydia</firstName>
+        <lastName>Kunz</lastName>
+        <postalCode>46000</postalCode>
+        <street>Ruska Street</street>
+    </persons>
+</personListWrapper>

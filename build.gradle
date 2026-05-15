@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'ua.org.nalabs.javalessons'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+javafx {
+    version = '24.0.1'
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base']
+}
+
+application {
+    mainClass = 'ua.org.nalabs.javalessons.javafx.Launcher'
+}
+
+dependencies {
+    implementation 'org.xerial:sqlite-jdbc:3.49.1.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:2.3.9'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['src', 'resources']
+            exclude '**/*.java'
+        }
+    }
+}
+
+shadowJar {
+    archiveBaseName = 'javafxdemo'
+    archiveVersion = ''
+    archiveClassifier = ''
+    mergeServiceFiles()
+    exclude 'module-info.class'
+    manifest {
+        attributes 'Main-Class': 'ua.org.nalabs.javalessons.javafx.Launcher'
+    }
+}
+
+// Disable default jar; fat jar is the primary artifact
+jar {
+    enabled = false
+}
+
+build.dependsOn shadowJar
